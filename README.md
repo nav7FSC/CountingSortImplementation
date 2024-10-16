@@ -40,7 +40,7 @@ Counting Sort is a non-comparative sorting algorithm used to sort integers. It w
 
 1. Clone this repository to your local machine:
    ```bash
-   git clone https://github.com/nav7FSC/counting-sort-java.git
+   git clone https://github.com/nav7FSC/CountingSortImplementation.git
 2. Open the project in your preferred Java IDE.
 3. Navigate to the `Main` class.
 4. Compile and run the `Main` class to execute the counting sort and display the results.
