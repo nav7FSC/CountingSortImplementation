@@ -28,11 +28,11 @@ public class Main {
      * and places elements into the sorted output array.
      *
      * @param in the input array to be sorted
-     * @param k  the maximum value in the input array
+     * @param maxValue  the maximum value in the input array
      * @return the sorted array
      */
-    public static int[] countingsort(int[] in, int k) {
-        int[] count = new int[k + 1];  // Initialize counting array
+    public static int[] countingSort(int[] in, int maxValue) {
+        int[] count = new int[maxValue + 1];  // Initialize counting array
         int[] out = new int[in.length];  // Array to store sorted elements
 
         // Step 1: Count occurrences of each element in the input array
@@ -41,7 +41,7 @@ public class Main {
         }
 
         // Step 2: Compute cumulative sums
-        for (int i = 1; i <= k; i++) {
+        for (int i = 1; i <= maxValue; i++) {
             count[i] += count[i - 1];
         }
 
@@ -68,7 +68,7 @@ public class Main {
         showArray(arr);  // Print unsorted array
 
         int max = 8;  // Maximum value in the array
-        int[] sortedArray = countingsort(arr, max);
+        int[] sortedArray = countingSort(arr, max);
         System.out.println("Sorted array:");
         showArray(sortedArray);  // Print sorted array
         System.out.println("----------------------------------------");
@@ -83,7 +83,7 @@ public class Main {
         System.out.println("Random array before sorting:");
         showArray(randomArray);  // Print the random unsorted array
 
-        int[] sortedRandomArray = countingsort(randomArray, 499);
+        int[] sortedRandomArray = countingSort(randomArray, 499);
         System.out.println("Random array after sorting:");
         showArray(sortedRandomArray);  // Print the random sorted array
         System.out.println("----------------------------------------");
@@ -95,7 +95,7 @@ public class Main {
             arrayList.add(value);  // Populate the ArrayList with the same values
         }
 
-        sortedRandomArray = countingsort(array1, 499);  // Sort the array
+        sortedRandomArray = countingSort(array1, 499);  // Sort the array
         arrayList.sort(null);  // Sort the ArrayList using Collections.sort
 
         // Check if both the array and ArrayList contain the same elements after sorting
